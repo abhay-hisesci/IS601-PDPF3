@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="card" class="m-5 p-2">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">ID: {{ hw.id }}</li>
+        <li class="list-group-item">Height: {{ hw.height }}</li>
+        <li class="list-group-item">Weight: {{ hw.weight }}</li>
+    </ul>
+    <div class="container" style="padding: 10px">
+        <div class="row">
+            <div class="col-sm d-flex justify-content-center">
+                <a href="/edit/{{hw.id}}" class="card-link btn btn-primary">Edit</a> <br>
+            </div>
+            <div class="col-sm d-flex justify-content-center">
+                <form action="/delete/{{hw.id}}" method="post"><button type="submit" class="btn btn-danger">Delete</button></form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
